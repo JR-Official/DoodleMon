@@ -1,22 +1,23 @@
+@use "sass:color"; // Import color module
 // Variables
-$light-green: #d1f5d3;
-$mid-green: #a8e6aa;
-$dark-green: #7fcd82;
-$accent-green: #5cb162;
-$text-color: #2c3e50;
+$light: #79ad74;
+$body: #a8e6aa;
+$header:  #7fcd82;
+$accent: #8bc086;
+$text-color:#20252b;
 
 // General Styles
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, $light-green, $mid-green);
+  background-color: $body;
   color: $text-color;
   min-height: 100vh;
 }
 
 header {
-  background: linear-gradient(to right, $mid-green, $dark-green);
+  background-color: $header;
   padding: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -33,7 +34,7 @@ header {
       margin: 0;
 
       span {
-        color: $accent-green;
+        color: $accent;
       }
     }
   }
@@ -51,7 +52,7 @@ header {
       transition: all 0.3s ease;
 
       &:hover {
-        color: $accent-green;
+        color: $accent;
         transform: translateY(-2px);
       }
     }
@@ -103,7 +104,7 @@ main {
       }
 
       h3 {
-        color: $accent-green;
+        color: $accent;
         margin-top: 0;
       }
     }
@@ -141,7 +142,7 @@ main {
 
         .doodlemon-img {
           height: 120px;
-          background-color: $light-green;
+          background-color: $light;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -164,7 +165,7 @@ main {
 
           h4 {
             margin: 0;
-            color: $accent-green;
+            color: $accent;
           }
 
           p {
@@ -179,7 +180,7 @@ main {
 }
 
 .btn {
-  background: $accent-green;
+  background: $accent;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -196,7 +197,7 @@ main {
 }
 
 footer {
-  background: linear-gradient(to right, $dark-green, $mid-green);
+  background-color: $light;
   color: white;
   text-align: center;
   padding: 1.5rem;
@@ -238,4 +239,32 @@ footer {
     cursor: pointer;
     color: white;
   }
+}
+
+// Scrollbar Styling (WebKit Browsers)
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $body;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, $accent, color.adjust($accent, $lightness: 20%));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, color.adjust($accent, $lightness: -10%), $accent);
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+// Firefox Support
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $accent $body;
 }

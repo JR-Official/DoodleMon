@@ -1,0 +1,241 @@
+// Variables
+$light-green: #d1f5d3;
+$mid-green: #a8e6aa;
+$dark-green: #7fcd82;
+$accent-green: #5cb162;
+$text-color: #2c3e50;
+
+// General Styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, $light-green, $mid-green);
+  color: $text-color;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(to right, $mid-green, $dark-green);
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 0;
+
+      span {
+        color: $accent-green;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $accent-green;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        color: $accent-green;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .doodlemon-gallery {
+    margin-bottom: 3rem;
+
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+
+      .doodlemon-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-5px) scale(1.05);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .doodlemon-img {
+          height: 120px;
+          background-color: $light-green;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          div {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+          }
+        }
+
+        .doodlemon-info {
+          padding: 0.8rem;
+          text-align: center;
+
+          h4 {
+            margin: 0;
+            color: $accent-green;
+          }
+
+          p {
+            margin: 0.3rem 0 0;
+            font-size: 0.8rem;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  background: $accent-green;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+footer {
+  background: linear-gradient(to right, $dark-green, $mid-green);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  &.open {
+    display: flex;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+}

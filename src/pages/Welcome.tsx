@@ -13,7 +13,7 @@ function App() {
     const [modalOpen, setModalOpen] = useState(false);
 
     const doodlemonData = [
-        { name: "Umbralisk-balls", type: "Dark", description: "Shadowy predator that hunts in complete darkness, absorbing light energy" },
+        { name: "Umbralisk", type: "Dark", description: "Shadowy predator that hunts in complete darkness, absorbing light energy" },
         { name: "Phantorach", type: "Ghost", description: "Ancient spectral serpent that haunts forgotten temples" },
         { name: "Thronilla", type: "Plant", description: "Sentient thorn bush that shoots poisonous pollen clouds" },
         { name: "Verdigore", type: "Fighting", description: "Moss-covered stone golem with vine-like muscles" },

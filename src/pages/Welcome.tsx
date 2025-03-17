@@ -1,4 +1,4 @@
-import '../sass/app.scss'
+import '../sass/app.scss';
 import { useRef, useState } from 'react';
 
 interface Doodlemon {
@@ -39,8 +39,8 @@ function App() {
     function getTypeEmoji(type: string) {
         const emojiMap: Record<string, string> = {
             'plant': '🌿', 'fire': '🔥', 'water': '💧', 'ghost': '👻', 'toxic': '☣️',
-            'normal': '🟤', 'metal': '🔩', 'ice': '❄️', 'flying': '?', 'rock': '🔶',
-            'ground': '?', 'dark': '🌑', 'bug': '🐛', 'lightning': '⚡', 'fighting': '🥋',
+            'normal': '🟤', 'metal': '🔩', 'ice': '❄️', 'flying': '🛫', 'rock': '🔶',
+            'ground': '🌎', 'dark': '🌑', 'bug': '🐛', 'lightning': '⚡', 'fighting': '🥋',
             'dragon': '🐉', 'psychic': '🌀', 'nuclear': '☢️', 'cosmic': '🌌', 'fairy': '✨',
             'crystal': '💎'
         };
@@ -55,14 +55,16 @@ function App() {
     return (
         <>
             <header>
-                <div className="logo-container">
-                    <h1 className="logo">Doodle<span>Mon</span></h1>
-                </div>
                 <nav>
-                    <a href="#home">Home</a>
-                    <a href="#features">Features</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#about">About</a>
+                    <div className="nav-left">
+                        <a href="#home">Home</a>
+                        <a href="#features">Features</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#about">About</a>
+                    </div>
+                    <div className="nav-right">
+                        <button className="btn signup-button">Sign Up</button>
+                    </div>
                 </nav>
             </header>
 

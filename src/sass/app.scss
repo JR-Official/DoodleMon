@@ -37,7 +37,7 @@ header {
         transition: all 0.3s ease;
 
         &:hover {
-          color: $accent;
+          color: white;
           transform: translateY(-2px);
         }
       }
@@ -55,7 +55,7 @@ header {
         transition: all 0.3s ease;
 
         &:hover {
-          color: adjust($accent, -10%);
+          color: white;
           transform: translateY(-2px);
         }
       }

@@ -59,7 +59,7 @@ function App() {
                     <div className="nav-left">
                         <a href="#home">Home</a>
                         <a href="#features">Features</a>
-                        <a href="#gallery">Gallery</a>
+                        <a href="#bestiary">Bestiary</a>
                         <a href="#about">About</a>
                     </div>
                     <div className="nav-right">
@@ -94,11 +94,11 @@ function App() {
                     </div>
                 </section>
 
-                <section id="gallery" className="doodlemon-gallery">
-                    <div className="gallery-title">
-                        <h2>Gallery</h2>
+                <section id="featured" className="doodlemon-featured">
+                    <div className="featured-title">
+                        <h2>Featured DoodleMon</h2>
                     </div>
-                    <div className="gallery-container" ref={doodlemonContainer}>
+                    <div className="featured-container" ref={doodlemonContainer}>
                         {doodlemonData.map((doodlemon, index) => (
                             <div
                                 key={index}
